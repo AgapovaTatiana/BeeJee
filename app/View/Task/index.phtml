@@ -1,0 +1,62 @@
+<?=$this->successmessage?>
+<div class="row">
+    <div class="col-10">
+        <form class="mb-3" method="post"  action="/html/task/sort" >
+            <div class="form-row">
+                <div class="col-2">
+                    <select class="custom-select" name="item">
+                        <option <?=$this->selected1;?> value="1">Имя</option>
+                        <option <?=$this->selected2;?> value="2">E-mail</option>
+                    </select>
+                </div>
+                <div class="col-3">
+                    <select class="custom-select" name="order">
+                        <option <?=$this->order0;?> value="0">По возрастанию</option>
+                        <option <?=$this->order1;?> value="1">По убыванию</option>
+                    </select>
+                </div>
+
+                <div class="form-check form-check-inline">
+                    <input name="new" class="form-check-input" type="checkbox" id="inlineCheckbox1" value="1" <?=$this->new;?>>
+                    <label class="form-check-label" for="inlineCheckbox1">Новые</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input name="edit" class="form-check-input" type="checkbox" id="inlineCheckbox2" value="1" <?=$this->edit;?>>
+                    <label class="form-check-label" for="inlineCheckbox2">Отредактированные</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input name="completed" class="form-check-input" type="checkbox" id="inlineCheckbox3" value="1"  <?=$this->completed;?>>
+                    <label class="form-check-label" for="inlineCheckbox3">Выполненные</label>
+                </div>
+
+                <div class="col-1">
+                        <button type="submit" class="btn btn-success">Фильтр</button>
+                </div>
+            </div>
+        </form>
+
+        <?=$this->counter;?>
+        <table class="table table-striped">
+            <thead  class="thead-dark">
+            <tr>
+                <th scope="col" style="text-align: center">Имя</th>
+                <th scope="col" style="text-align: center">E-mail</th>
+                <th scope="col" style="text-align: center">Текст задачи</th>
+                <th scope="col" style="text-align: center">Статусы</th>
+                <?=$this->adminthead;?>
+            </tr>
+            </thead>
+            <tbody>
+            <?=$this->inside;?>
+            </tbody>
+        </table>
+
+    </div>
+    <div class="col-2">
+        <a class="btn btn-primary mt-5" href="/html/task/create" role="button">Добаить задачу</a>
+        <?=$this->adminButton?>
+
+    </div>
+</div>
+
+
